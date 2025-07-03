@@ -84,11 +84,14 @@ class LinkedList{
         }
         return false;
     }
-    find(value){
+    find(search){
         let currentNode = this.head;
         let currentIndex = 0;
         while (currentNode){
-            if (currentNode.value === value){
+            if (typeof currentNode.value === 'object' && currentNode.value != null && currentNode.value.key === search){
+                return currentIndex
+            }
+            if (typeof currentNode.value === 'string' && currentNode.value === value){
                 return currentIndex;
             }
             currentNode = currentNode.next;
@@ -100,21 +103,31 @@ class LinkedList{
         let currentNode = this.head;
         let currentIndex = 0;
         let newNode = new Node (value);
-        while (currentIndex != index - 1){
+        while (currentIndex + 1 < index){
+            console.l
             currentNode = currentNode.next
             currentIndex++
         }
-        newNode.next = currentNode.next;
-        currentNode.next = newNode;
+        if (index === 0){
+            newNode.next = currentNode
+            this.head = newNode
+        } else {
+            newNode.next = currentNode.next
+            currentNode.next = newNode;
+        }
+        
     }
     removeAt(index){
         let currentNode = this.head;
         let currentIndex = 0;
-        while (currentIndex != index - 1){
+        while (currentIndex + 1 < index){
             currentNode = currentNode.next
             currentIndex++
         }
-        currentNode.next = currentNode.next.next;
+        if (index === 0){
+            this.head = currentNode.next
+        } else {currentNode.next = currentNode.next.next;
+        }
     }
 }
 
@@ -130,10 +143,11 @@ class Node{
 // list.append('hedgehog');
 // list.append('end');
 // list.append('cat');
-// list.prepend('first');
+// list.prepend('first pre');
 // list.pop();
 // list.insertAt('bunny', 1)
-// list.removeAt(2);
+// list.removeAt(1);
+// list.insertAt('third', 2)
 // console.log(list.size());
 // console.log(list.toString());
 // console.log(list.start());
@@ -141,3 +155,4 @@ class Node{
 // console.log(list.at(2))
 // console.log(list.contains('bunny'));
 // console.log(list.find('bird'));
+
