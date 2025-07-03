@@ -91,7 +91,7 @@ class LinkedList{
             if (typeof currentNode.value === 'object' && currentNode.value != null && currentNode.value.key === search){
                 return currentIndex
             }
-            if (typeof currentNode.value === 'string' && currentNode.value === value){
+            if (typeof currentNode.value === 'string' && currentNode.value === search){
                 return currentIndex;
             }
             currentNode = currentNode.next;
