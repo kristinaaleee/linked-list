@@ -1,3 +1,5 @@
+export { LinkedList };
+
 class LinkedList{
     // create empty list
     constructor() {
@@ -123,19 +125,19 @@ class Node{
     }
 }
 
-const list = new LinkedList();
-list.append('dog');
-list.append('hedgehog');
-list.append('end');
-list.append('cat');
-list.prepend('first');
-list.pop();
-list.insertAt('bunny', 1)
-list.removeAt(2);
-console.log(list.size());
-console.log(list.toString());
-console.log(list.start());
-console.log(list.tail());
-console.log(list.at(2))
-console.log(list.contains('bunny'));
-console.log(list.find('bird'));
+// const list = new LinkedList();
+// list.append('dog');
+// list.append('hedgehog');
+// list.append('end');
+// list.append('cat');
+// list.prepend('first');
+// list.pop();
+// list.insertAt('bunny', 1)
+// list.removeAt(2);
+// console.log(list.size());
+// console.log(list.toString());
+// console.log(list.start());
+// console.log(list.tail());
+// console.log(list.at(2))
+// console.log(list.contains('bunny'));
+// console.log(list.find('bird'));
